@@ -133,6 +133,11 @@ namespace LogBookExtractor
                     }
                     ps = s;
                 }
+                //add the last one
+                seg.trkpt = trkpts.ToArray();
+                trk.trkseg[0] = seg;
+                trks.Add(trk);
+
                 gpx.trk = trks.ToArray();
                 XmlSerializer ser = new XmlSerializer(typeof(gpxType));
                 StreamWriter w = new StreamWriter(tbOutputGpx.Text);
