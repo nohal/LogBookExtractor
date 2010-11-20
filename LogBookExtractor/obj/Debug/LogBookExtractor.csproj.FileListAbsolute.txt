@@ -1,8 +1,0 @@
-C:\WORK\opencpn\source\LogBookExtractor\LogBookExtractor\bin\Debug\LogBookExtractor.exe
-C:\WORK\opencpn\source\LogBookExtractor\LogBookExtractor\bin\Debug\LogBookExtractor.pdb
-C:\WORK\opencpn\source\LogBookExtractor\LogBookExtractor\obj\Debug\ResolveAssemblyReference.cache
-C:\WORK\opencpn\source\LogBookExtractor\LogBookExtractor\obj\Debug\LogBookExtractor.LogBookExtractorFrm.resources
-C:\WORK\opencpn\source\LogBookExtractor\LogBookExtractor\obj\Debug\LogBookExtractor.Properties.Resources.resources
-C:\WORK\opencpn\source\LogBookExtractor\LogBookExtractor\obj\Debug\LogBookExtractor.csproj.GenerateResource.Cache
-C:\WORK\opencpn\source\LogBookExtractor\LogBookExtractor\obj\Debug\LogBookExtractor.exe
-C:\WORK\opencpn\source\LogBookExtractor\LogBookExtractor\obj\Debug\LogBookExtractor.pdb
