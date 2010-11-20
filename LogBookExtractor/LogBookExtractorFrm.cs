@@ -41,10 +41,10 @@ namespace LogBookExtractor
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            if (!File.Exists(tbInputLog.Text))
+            if (!File.Exists(tbInputLog.Text) || tbOutputGpx.Text.Length == 0)
             {
                 MessageBox.Show(
-                    "You have to select a log file first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    "You have to select a log file and gpx output first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -53,6 +53,7 @@ namespace LogBookExtractor
                 string ps = String.Empty;
                 DateTime date = new DateTime();
                 TimeSpan entrytime = new TimeSpan();
+                DateTime entrydate = new DateTime();
                 double latitude = 0;
                 double longitude = 0;
                 gpxType gpx = new gpxType();
@@ -91,6 +92,7 @@ namespace LogBookExtractor
                     if (s.Contains("LOGBOOK"))
                     {
                         string[] sa = s.Split(' ');
+                        /*
                         if (sa[0].EndsWith(":"))
                         {
                             entrytime = TimeSpan.Parse(sa[0].Substring(0, sa[0].Length - 1));
@@ -103,6 +105,9 @@ namespace LogBookExtractor
                                 entrytime.Add(new TimeSpan(12, 0, 0));
                             }
                         }
+                        */
+                        entrydate = DateTime.Parse(sa[3]);
+                        entrytime = TimeSpan.Parse(sa[4]);
                         int i = 0;
                         foreach (var s1 in sa)
                         {
@@ -116,7 +121,7 @@ namespace LogBookExtractor
                             }
                             i++;
                         }
-                        trkpts.Add(new wptType() { lat = (decimal)latitude, lon = (decimal)longitude, time = date.Add(entrytime), timeSpecified = true });
+                        trkpts.Add(new wptType() { lat = (decimal)latitude, lon = (decimal)longitude, time = entrydate.Add(entrytime), timeSpecified = true });
                     }
                     ps = s;
                 }
