@@ -106,8 +106,16 @@ namespace LogBookExtractor
                             }
                         }
                         */
-                        entrydate = DateTime.Parse(sa[3]);
-                        entrytime = TimeSpan.Parse(sa[4]);
+                        try //FIXME: this is a VERY ugly solution for 12 vs. 24 hour time format...
+                        {
+                            entrydate = DateTime.Parse(sa[3]);
+                            entrytime = TimeSpan.Parse(sa[4]);
+                        }
+                        catch(Exception ex)
+                        {
+                            entrydate = DateTime.Parse(sa[2]);
+                            entrytime = TimeSpan.Parse(sa[3]);
+                        }
                         int i = 0;
                         foreach (var s1 in sa)
                         {
@@ -130,6 +138,7 @@ namespace LogBookExtractor
                 StreamWriter w = new StreamWriter(tbOutputGpx.Text);
                 ser.Serialize(w, gpx);
                 w.Close();
+                MessageBox.Show("Done!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
