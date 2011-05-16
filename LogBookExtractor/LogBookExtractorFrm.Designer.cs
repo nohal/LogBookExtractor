@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogBookExtractorFrm));
             this.btnGo = new System.Windows.Forms.Button();
             this.tbInputLog = new System.Windows.Forms.TextBox();
             this.btnBrowseLog = new System.Windows.Forms.Button();
@@ -111,6 +112,7 @@
             this.Controls.Add(this.btnBrowseLog);
             this.Controls.Add(this.tbInputLog);
             this.Controls.Add(this.btnGo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LogBookExtractorFrm";
             this.Text = "LogBookExtractor";
             this.ResumeLayout(false);
